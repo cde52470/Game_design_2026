@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Diamond Road - 棒球生涯原型</title>
+    <meta
+      name="description"
+      content="一款棒球人生養成原型：建立球員、安排訓練、承受壓力，從高中一路拚向選秀。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="start-panel" id="startPanel">
+        <div class="brand-block">
+          <p class="eyebrow">Baseball Career Simulator</p>
+          <h1>Diamond Road</h1>
+          <p class="intro">
+            從高一春天開始，讓一名年輕球員在訓練、比賽、壓力與運氣之間走出自己的棒球人生。
+          </p>
+        </div>
+
+        <form class="creator" id="creatorForm">
+          <label>
+            <span>球員姓名</span>
+            <input id="playerName" maxlength="12" placeholder="例如：林一翔" autocomplete="off" />
+          </label>
+          <label>
+            <span>背號</span>
+            <input id="playerNumber" type="number" min="0" max="99" value="18" />
+          </label>
+
+          <fieldset>
+            <legend>守備位置</legend>
+            <div class="position-grid" id="positionGrid">
+              <button type="button" class="selected" data-position="pitcher">投手</button>
+              <button type="button" data-position="catcher">捕手</button>
+              <button type="button" data-position="infielder">內野手</button>
+              <button type="button" data-position="outfielder">外野手</button>
+            </div>
+          </fieldset>
+
+          <label>
+            <span>世界種子</span>
+            <div class="seed-row">
+              <input id="seedInput" maxlength="14" autocomplete="off" />
+              <button type="button" id="randomSeed" aria-label="產生新種子">換</button>
+            </div>
+          </label>
+
+          <button class="primary" type="submit">開始高中新篇章</button>
+        </form>
+      </section>
+
+      <section class="game-panel hidden" id="gamePanel">
+        <header class="scoreboard">
+          <div>
+            <p class="eyebrow" id="seasonLabel">高一 春季</p>
+            <h2 id="playerTitle">NO.18 球員</h2>
+          </div>
+          <div class="quick-stats">
+            <span><b id="overall">0</b>綜合</span>
+            <span><b id="fame">0</b>聲望</span>
+            <span><b id="stress">0</b>壓力</span>
+          </div>
+        </header>
+
+        <div class="main-grid">
+          <aside class="player-card">
+            <div class="jersey">
+              <span id="jerseyNo">18</span>
+            </div>
+            <h3 id="cardName">球員</h3>
+            <p id="positionName">投手</p>
+            <dl>
+              <div><dt>球速</dt><dd id="power">0</dd></div>
+              <div><dt>控球</dt><dd id="technique">0</dd></div>
+              <div><dt>守備</dt><dd id="defense">0</dd></div>
+              <div><dt>體能</dt><dd id="stamina">0</dd></div>
+              <div><dt>心態</dt><dd id="mindset">0</dd></div>
+            </dl>
+          </aside>
+
+          <section class="turn-card">
+            <p class="phase-title" id="phaseTitle">本季目標</p>
+            <h3 id="storyTitle">新球季開始</h3>
+            <p id="storyText">
+              教練把你叫到本壘後方，問你這一季要用什麼方式證明自己。
+            </p>
+
+            <div class="actions" id="actions"></div>
+            <div class="result-box hidden" id="resultBox"></div>
+          </section>
+
+          <aside class="log-card">
+            <div class="log-head">
+              <h3>生涯紀錄</h3>
+              <button id="resetGame" type="button">重來</button>
+            </div>
+            <ol id="careerLog"></ol>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
