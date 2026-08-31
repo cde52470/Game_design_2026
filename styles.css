@@ -1,15 +1,15 @@
 :root {
-  color-scheme: dark;
-  --bg: #07110d;
-  --field: #0d2a1b;
-  --field-2: #143d29;
-  --chalk: #f4f0df;
-  --muted: #b8c6b8;
-  --gold: #e9b44c;
-  --red: #d96c5f;
-  --blue: #64a6bd;
-  --line: rgba(244, 240, 223, 0.18);
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  color-scheme: light;
+  --bg: #ffffff;
+  --field: #f7f7f7;
+  --field-2: #eeeeee;
+  --chalk: #161616;
+  --muted: #404040;
+  --gold: #c88719;
+  --red: #b84035;
+  --blue: #16718b;
+  --line: rgba(0, 0, 0, 0.18);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
   font-family:
     Inter, "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, sans-serif;
 }
@@ -21,10 +21,7 @@
 body {
   min-height: 100vh;
   margin: 0;
-  background:
-    linear-gradient(135deg, rgba(233, 180, 76, 0.13), transparent 34%),
-    radial-gradient(circle at 78% 14%, rgba(100, 166, 189, 0.18), transparent 30%),
-    var(--bg);
+  background: var(--bg);
   color: var(--chalk);
 }
 
@@ -49,7 +46,7 @@ button {
 .start-panel,
 .game-panel {
   border: 1px solid var(--line);
-  background: rgba(7, 17, 13, 0.76);
+  background: #ffffff;
   box-shadow: var(--shadow);
   backdrop-filter: blur(20px);
 }
@@ -68,16 +65,15 @@ button {
   justify-content: end;
   overflow: hidden;
   background:
-    linear-gradient(rgba(7, 17, 13, 0.22), rgba(7, 17, 13, 0.78)),
-    repeating-linear-gradient(90deg, transparent 0 80px, rgba(255, 255, 255, 0.025) 80px 82px),
-    linear-gradient(140deg, #164a31, #091a12 64%);
+    repeating-linear-gradient(90deg, transparent 0 80px, rgba(0, 0, 0, 0.035) 80px 82px),
+    linear-gradient(140deg, #ffffff, #f1f1f1 64%);
 }
 
 .brand-block::before {
   content: "";
   position: absolute;
   inset: 18% -10% -48% 24%;
-  border: 3px solid rgba(244, 240, 223, 0.34);
+  border: 3px solid rgba(0, 0, 0, 0.15);
   transform: rotate(45deg);
 }
 
@@ -121,7 +117,7 @@ h1 {
   display: grid;
   align-content: center;
   gap: 22px;
-  background: rgba(13, 42, 27, 0.86);
+  background: #fafafa;
 }
 
 label,
@@ -146,7 +142,7 @@ input {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 0 14px;
-  background: rgba(244, 240, 223, 0.08);
+  background: #ffffff;
   color: var(--chalk);
   outline: 0;
 }
@@ -168,7 +164,7 @@ input:focus {
   border: 1px solid var(--line);
   border-radius: 8px;
   color: var(--chalk);
-  background: rgba(244, 240, 223, 0.08);
+  background: #ffffff;
 }
 
 .position-grid button {
@@ -179,7 +175,7 @@ input:focus {
 .actions button:hover,
 .seed-row button:hover {
   border-color: var(--gold);
-  background: rgba(233, 180, 76, 0.18);
+  background: rgba(200, 135, 25, 0.14);
 }
 
 .seed-row {
@@ -213,7 +209,7 @@ input:focus {
   justify-content: space-between;
   gap: 18px;
   border: 1px solid var(--line);
-  background: linear-gradient(90deg, rgba(20, 61, 41, 0.95), rgba(9, 26, 18, 0.95));
+  background: linear-gradient(90deg, #ffffff, #f3f3f3);
 }
 
 .scoreboard h2 {
@@ -255,7 +251,7 @@ input:focus {
 .log-card {
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(244, 240, 223, 0.055);
+  background: #ffffff;
 }
 
 .player-card,
@@ -361,7 +357,7 @@ dd {
   margin-top: 18px;
   border-left: 4px solid var(--gold);
   padding: 12px 14px;
-  background: rgba(233, 180, 76, 0.12);
+  background: rgba(200, 135, 25, 0.1);
   line-height: 1.65;
 }
 
