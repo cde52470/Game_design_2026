@@ -6,7 +6,7 @@
     <title>Diamond Road - 棒球生涯原型</title>
     <meta
       name="description"
-      content="一款棒球人生養成原型：建立球員、安排訓練、承受壓力，從高中一路拚向選秀。"
+      content="一款年度回合制棒球人生模擬器：讀懂天賦、分配成長、面對事件，讓同一名球員走出不同職涯。"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -17,7 +17,7 @@
           <p class="eyebrow">Baseball Career Simulator</p>
           <h1>Diamond Road</h1>
           <p class="intro">
-            從高一春天開始，讓一名年輕球員在訓練、比賽、壓力與運氣之間走出自己的棒球人生。
+            每一年只做少數關鍵選擇。讀懂天賦、分配成長，讓同一名球員在不同路線中長成不同版本的自己。
           </p>
         </div>
 
@@ -49,58 +49,48 @@
             </div>
           </label>
 
-          <button class="primary" type="submit">開始高中新篇章</button>
+          <button class="primary" type="submit">開始這段棒球人生</button>
         </form>
       </section>
 
       <section class="game-panel hidden" id="gamePanel">
         <header class="scoreboard">
           <div>
-            <p class="eyebrow" id="seasonLabel">高一 春季</p>
+            <p class="eyebrow" id="yearLabel">2026 年・16 歲・高一</p>
             <h2 id="playerTitle">NO.18 球員</h2>
           </div>
           <div class="quick-stats">
             <span><b id="overall">0</b>綜合</span>
-            <span><b id="fame">0</b>聲望</span>
-            <span><b id="stress">0</b>壓力</span>
+            <span><b id="level">高中</b>層級</span>
+            <span class="arm-stat hidden" id="armStat"><b id="armLabel">輕鬆</b>肩肘</span>
           </div>
         </header>
 
-        <div class="main-grid">
-          <aside class="player-card">
-            <div class="jersey">
-              <span id="jerseyNo">18</span>
+        <section class="game-feed" id="gameFeed" aria-label="年度事件紀錄"></section>
+
+        <section class="control-dock" id="controlDock">
+          <div class="control-head">
+            <div>
+              <p class="phase-title" id="phaseTitle">年度成長</p>
+              <h3 id="storyTitle">開年成長骰</h3>
+              <p id="storyText">
+                系統會給出今年的成長骰。骰子是年度資源，玩家要決定如何投入能力。
+              </p>
             </div>
-            <h3 id="cardName">球員</h3>
-            <p id="positionName">投手</p>
-            <dl>
-              <div><dt>球速</dt><dd id="power">0</dd></div>
-              <div><dt>控球</dt><dd id="technique">0</dd></div>
-              <div><dt>守備</dt><dd id="defense">0</dd></div>
-              <div><dt>體能</dt><dd id="stamina">0</dd></div>
-              <div><dt>心態</dt><dd id="mindset">0</dd></div>
-            </dl>
-          </aside>
-
-          <section class="turn-card">
-            <p class="phase-title" id="phaseTitle">本季目標</p>
-            <h3 id="storyTitle">新球季開始</h3>
-            <p id="storyText">
-              教練把你叫到本壘後方，問你這一季要用什麼方式證明自己。
-            </p>
-
-            <div class="actions" id="actions"></div>
-            <div class="result-box hidden" id="resultBox"></div>
-          </section>
-
-          <aside class="log-card">
-            <div class="log-head">
-              <h3>生涯紀錄</h3>
+            <div class="control-tools">
+              <button id="dockToggle" type="button" aria-expanded="true">收合</button>
               <button id="resetGame" type="button">重來</button>
             </div>
-            <ol id="careerLog"></ol>
-          </aside>
-        </div>
+          </div>
+
+          <div class="control-body" id="controlBody">
+            <div class="dice-panel hidden" id="dicePanel"></div>
+            <div class="stats-list hidden" id="statsList"></div>
+            <div class="stats-actions hidden" id="statsActions"></div>
+            <div class="actions" id="actions"></div>
+            <div class="result-box hidden" id="resultBox"></div>
+          </div>
+        </section>
       </section>
     </main>
 
